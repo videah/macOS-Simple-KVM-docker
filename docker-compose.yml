@@ -1,0 +1,16 @@
+version: '3'
+services:
+  macos-kvm:
+    container_name: macos-kvm
+    build: .
+    devices:
+      - /dev/kvm:/dev/kvm
+    volumes:
+      - ./data:/data
+      - ./macos:/macos
+    environment:
+      - MACOS_VERSION=mojave
+      - MACOS_MEMORY=2G
+      - MACOS_CPUS=1
+      - MACOS_DRIVE=/data/mac_drive.qcow2
+      - MACOS_DRIVE_SIZE=32G

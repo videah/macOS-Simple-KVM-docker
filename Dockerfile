@@ -14,6 +14,13 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+# Configuration options
+ENV MACOS_VERSION mojave
+ENV MACOS_MEMORY 2G
+ENV MACOS_CPUS 1
+ENV MACOS_DRIVE /data/mac_drive.qcow2
+ENV MACOS_DRIVE_SIZE 32G
+
 WORKDIR /macos
 
 ENTRYPOINT ["/app/run.sh"]
